@@ -1,0 +1,25 @@
+[project]
+name = "ai_enablement_assessment"
+version = "0.1.0"
+description = "ai_enablement_assessment using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[litellm,tools]==1.10.1",
+    "onnxruntime==1.15.0",
+]
+
+[project.scripts]
+ai_enablement_assessment = "ai_enablement_assessment.main:run"
+run_crew = "ai_enablement_assessment.main:run"
+train = "ai_enablement_assessment.main:train"
+replay = "ai_enablement_assessment.main:replay"
+test = "ai_enablement_assessment.main:test"
+run_with_trigger = "ai_enablement_assessment.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

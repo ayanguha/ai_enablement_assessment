@@ -1,0 +1,42 @@
+feedback_compilation_task:
+  description: >
+    A synthesis of qualitative and quantitative insights from interviews and feedback sessions, organized by stakeholder roles/impact areas.
+  expected_output: >
+    A prioritized list of key themes, concerns, and suggestions for improvement. 
+  agent: ai_strategist
+  output_file: output/feedback_compilation.md
+  markdown: true
+   
+interdependency_analysis_matrix_task:
+  description: >
+    A visual or tabular representation mapping AI tools/technologies against existing systems, identifying compatibility, conflicts, and integration requirements
+  expected_output: >
+    A matrix detailing interdependencies, risks, and recommended steps for seamless integration. 
+    Formatted as markdown without '```'
+  agent: ai_strategist
+  output_file: output/interdependency_analysis_matrix.md
+  markdown: true
+   
+actionable_insight_briefing_task:
+  description: >
+    A concise summary of actionable insights derived from the analysis, highlighting key recommendations for AI adoption and integration.
+  expected_output: >
+    A briefing document outlining a prioritized action plan with clear next steps for AI enablement.
+    Formatted as markdown without '```'
+  agent: ai_strategist
+  output_file: output/actionable_insight_briefing.md
+  markdown: true
+  
+exec_summary_task:
+  description: >
+    This task is to create an executive summary highlighting key insights, challenges, and opportunities from interdependency analysis matrix tasks. 
+  expected_output: >
+    A structured report summarizing alignment gaps, interdependencies, and actionable recommendations for AI strategy 
+  agent: ai_strategist
+  output_file: output/exec_summary.md
+  markdown: true
+  context:
+    - feedback_compilation_task
+    - interdependency_analysis_matrix_task
+    - actionable_insight_briefing_task
+   
