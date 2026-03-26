@@ -6,8 +6,11 @@ authors = [{ name = "Your Name", email = "you@example.com" }]
 requires-python = ">=3.10,<3.14"
 dependencies = [
     "crewai[litellm,tools]==1.10.1",
+    "langtrace-python-sdk>=3.8.21",
     "onnxruntime==1.15.0",
+    "setuptools<70",
 ]
+
 
 [project.scripts]
 ai_enablement_assessment = "ai_enablement_assessment.main:run"

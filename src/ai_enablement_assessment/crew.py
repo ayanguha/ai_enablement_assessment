@@ -1,12 +1,19 @@
-from crewai import Agent, Crew, Process, Task
-from crewai.project import CrewBase, agent, crew, task
-from crewai.agents.agent_builder.base_agent import BaseAgent
-from crewai import LLM
+
+import os
 # If you want to run a snippet of code before or after the crew starts,
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
 
-llm_model_provider = 'openai'
+from langtrace_python_sdk import langtrace
+langtrace.init(api_key=os.getenv('LANGTRACE_API_KEY'))
+
+
+from crewai import Agent, Crew, Process, Task
+from crewai.project import CrewBase, agent, crew, task
+from crewai.agents.agent_builder.base_agent import BaseAgent
+from crewai import LLM
+
+llm_model_provider = 'ollama'
 if llm_model_provider == 'ollama':
     llm = LLM(model="ollama/lfm2.5-thinking:latest", base_url="http://localhost:11434")
 elif llm_model_provider == 'openai':
